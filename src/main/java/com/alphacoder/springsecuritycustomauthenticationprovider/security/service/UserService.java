@@ -21,7 +21,7 @@ public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public User loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<UserEntity> userEntityOptional= this.userRepository.findUserByUsername(username);
 
         UserEntity userEntity= userEntityOptional.
